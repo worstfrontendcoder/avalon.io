@@ -16,4 +16,9 @@ public class ColorPicker : MonoBehaviour
         //Change the colour randomly
         GetComponent<Renderer>().material = Mats[Random.Range(0, Mats.Count)];
     }
+
+    private void Update()
+    {
+        Awake();
+    }
 }

@@ -11,7 +11,7 @@ public class eat : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Food")
+        if (other.gameObject.tag == "food")
         {
             transform.localScale += new Vector3(Increase, Increase, Increase);
             Destroy(other.gameObject);
