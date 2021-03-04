@@ -4,28 +4,33 @@ using UnityEngine;
 
 public class FoodSpawn : MonoBehaviour
 {
-	public GameObject Food;
-	public float Speed;
 
-	void FoodGenerate()
-	{
-		int x = Random.Range(0, Camera.main.pixelWidth);
-		int y = Random.Range(0, Camera.main.pixelHeight);
+    public GameObject food;
+    public float speed;
 
-		Vector3 Target = Camera.main.ScreenToWorldPoint(new Vector3(x, y, 0));
-		Target.z = 0;
+ 
 
-		Instantiate(Food, Target, Quaternion.identity);
-	}
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        InvokeRepeating("FoodGenerate", 0, Speed);
+        InvokeRepeating("Generate", 0, speed);
     }
 
-    // Update is called once per frame
-    void Update()
+
+
+    void Generate()
     {
-        
+
+        int x = Random.Range(0, Camera.main.pixelWidth);
+        int y = Random.Range(0, Camera.main.pixelHeight);
+
+
+        Vector3 Target = Camera.main.ScreenToWorldPoint(new Vector3(x, y, 0));
+        Target.z = 0;
+
+        Instantiate(food, Target, Quaternion.identity); 
+
+
     }
+
+
 }

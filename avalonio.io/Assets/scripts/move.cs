@@ -12,5 +12,7 @@ public class move : MonoBehaviour
         Target.z = transform.position.z;
 
         transform.position = Vector3.MoveTowards(transform.position, Target, Speed * Time.deltaTime / transform.localScale.x);
+
+
     }
 }
