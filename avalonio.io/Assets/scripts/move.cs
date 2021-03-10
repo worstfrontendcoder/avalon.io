@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class move : MonoBehaviour
+public class Move : MonoBehaviour
 {
+
     public float Speed;
 
     void Update()
@@ -12,7 +13,5 @@ public class move : MonoBehaviour
         Target.z = transform.position.z;
 
         transform.position = Vector3.MoveTowards(transform.position, Target, Speed * Time.deltaTime / transform.localScale.x);
-
-
     }
 }
